@@ -48,8 +48,6 @@ main{
 
 <script>
 
-import bootstrap from "bootstrap/dist/js/bootstrap.bundle";
-
 export default {
   methods: {
     checkAnswer(answer){
@@ -61,14 +59,14 @@ export default {
       }
 
       const modalElement = document.getElementById('wrongAnswerModal')
-      const modal = new this.bootstrap.Modal(modalElement)
+      const modal = new bootstrap.Modal(modalElement)
 
       modal.toggle()
     },
 
     closeModal(){
       const modalElement = document.getElementById('wrongAnswerModal')
-      const modal = this.bootstrap.Modal.getInstance(modalElement)
+      const modal = bootstrap.Modal.getInstance(modalElement)
 
       modal.hide()
     }
