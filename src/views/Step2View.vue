@@ -26,13 +26,18 @@ import TheWelcome from '@/components/TheWelcome.vue'
       <h1>Indica il giorno del mese corrente</h1>
 
       <div class="wrapper">
-        <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(1)">Gennaio</button>
-        <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(2)">Febbraio</button>
-        <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(3)">Mercoledì</button>
-        <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(4)">Giovedì</button>
-        <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(5)">Venerdì</button>
-        <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(6)">Sabato</button>
-        <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(0)">Domenica</button>
+        <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(0)">Gennaio</button>
+        <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(1)">Febbraio</button>
+        <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(2)">Marzo</button>
+        <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(3)">Aprile</button>
+        <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(4)">Maggio</button>
+        <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(5)">Giugno</button>
+        <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(6)">Luglio</button>
+        <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(7)">Agosto</button>
+        <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(8)">Settembre</button>
+        <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(9)">Ottobre</button>
+        <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(10)">Novembre</button>
+        <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(11)">Dicembre</button>
       </div>
     </div>
   </main>
@@ -51,10 +56,10 @@ main{
 export default {
   methods: {
     checkAnswer(answer){
-      const rightAnswer = (new Date()).getDay()
+      const rightAnswer = (new Date()).getMonth()
       if(answer === rightAnswer){
         console.log("Corretto")
-        this.$router.push({name: 'step2'})
+        this.$router.push({name: 'step3'})
         return;
       }
 

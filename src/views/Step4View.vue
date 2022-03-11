@@ -25,12 +25,11 @@ import TheWelcome from '@/components/TheWelcome.vue'
 
       <h1>Indica il giorno del mese corrente</h1>
 
-      <div class="row">
-          <div class="col-md-2" v-for="day in Array.from({length:31},(v,k)=>k+1)">
-            <button class="m-5 btn btn-primary w-100" @click="checkAnswer(day)">
-              <span v-text="day"></span>
-            </button>
-          </div>
+      <div class="wrapper">
+        <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(5,12)">Mattina</button>
+        <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(11,18)">Pomeriggio</button>
+        <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(17,24)">Sera</button>
+        <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(23,5)">Notte</button>
       </div>
 
     </div>
@@ -50,11 +49,12 @@ main{
 export default {
 
   methods: {
-    checkAnswer(answer){
-      const rightAnswer = (new Date()).getDate()
-      if(answer === rightAnswer){
+    checkAnswer(min,max){
+      const rightAnswer = (new Date()).getHours()
+
+      if(min <= rightAnswer && max >= rightAnswer){
         console.log("Corretto")
-        this.$router.push({name: 'step4'})
+        this.$router.push({name: 'step5'})
         return;
       }
 

@@ -23,14 +23,10 @@ import TheWelcome from '@/components/TheWelcome.vue'
         </div>
       </div>
 
-      <h1>Indica il giorno del mese corrente</h1>
+      <h1>Riepilogo</h1>
 
-      <div class="row">
-          <div class="col-md-2" v-for="day in Array.from({length:31},(v,k)=>k+1)">
-            <button class="m-5 btn btn-primary w-100" @click="checkAnswer(day)">
-              <span v-text="day"></span>
-            </button>
-          </div>
+      <div class="wrapper">
+        <h3>Oggi è il <div v-text="todayDate"></div> </h3>
       </div>
 
     </div>
@@ -49,20 +45,18 @@ main{
 
 export default {
 
+  data(){
+    return {
+      todayDate: ''
+    }
+  },
+
+  mounted(){
+    this.todayDate = (new Date).getDate() +"/"+ ((new Date).getMonth() + 1) +"/"+(new Date).getFullYear()+
+        " e sono le ore "+ (new Date).getHours()+"."+ (new Date).getMinutes()
+  },
+
   methods: {
-    checkAnswer(answer){
-      const rightAnswer = (new Date()).getDate()
-      if(answer === rightAnswer){
-        console.log("Corretto")
-        this.$router.push({name: 'step4'})
-        return;
-      }
-
-      const modalElement = document.getElementById('wrongAnswerModal')
-      const modal = new bootstrap.Modal(modalElement)
-
-      modal.toggle()
-    },
 
     closeModal(){
       const modalElement = document.getElementById('wrongAnswerModal')
