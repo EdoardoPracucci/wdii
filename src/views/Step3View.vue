@@ -25,8 +25,14 @@ import TheWelcome from '@/components/TheWelcome.vue'
 
       <h1>Indica il giorno del mese corrente</h1>
 
+      <div>
+          <div class="btn btn-primary" v-for="day in Array.from({length:31},(v,k)=>k+1)">
+            <span v-text="day"></span>
+          </div>
+      </div>
+
       <div class="wrapper">
-        <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(1)">Gennaio</button>
+        <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" v-on:click="checkAnswer(1)">Gennaio</button>
         <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(2)">Febbraio</button>
         <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(3)">Mercoledì</button>
         <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(4)">Giovedì</button>
@@ -49,6 +55,21 @@ main{
 <script>
 
 export default {
+
+  data(){
+    return{
+      elements: [
+        {
+          name: "Edoardo",
+          surname: "Pracucci"
+        },{
+          name: "Lorenzo",
+          surname: "Croccolino"
+        }
+      ]
+    }
+  },
+
   methods: {
     checkAnswer(answer){
       const rightAnswer = (new Date()).getDay()
