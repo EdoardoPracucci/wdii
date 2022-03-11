@@ -7,13 +7,13 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="wrongAnswerModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="wrongAnswerModalLabel">Aspetta</h5>
             </div>
             <div class="modal-body">
-              Risposta non corretta, riprovare
+
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary w-100" data-dismiss="modal" @click="closeModal">Close</button>
+              <button type="button" class="btn btn-primary w-100" data-dismiss="modal" @click="closeModal">Chiudi</button>
             </div>
           </div>
         </div>

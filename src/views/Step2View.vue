@@ -11,19 +11,19 @@ import TheWelcome from '@/components/TheWelcome.vue'
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="wrongAnswerModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="wrongAnswerModalLabel">Aspetta</h5>
             </div>
             <div class="modal-body">
-              Risposta non corretta, riprovare
+
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary w-100" data-dismiss="modal" @click="closeModal">Close</button>
+              <button type="button" class="btn btn-primary w-100" data-dismiss="modal" @click="closeModal">Chiudi</button>
             </div>
           </div>
         </div>
       </div>
 
-      <h1>Indica il giorno del mese corrente</h1>
+      <h1>Indica il mese corrente</h1>
 
       <div class="wrapper">
         <button class="mt-2 w-100 d-flex btn btn-primary mx-auto" @click="checkAnswer(0)">Gennaio</button>

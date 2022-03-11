@@ -11,19 +11,19 @@ import TheWelcome from '@/components/TheWelcome.vue'
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="wrongAnswerModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="wrongAnswerModalLabel">Aspetta</h5>
             </div>
             <div class="modal-body">
-              Risposta non corretta, riprovare
+
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary w-100" data-dismiss="modal" @click="closeModal">Close</button>
+              <button type="button" class="btn btn-primary w-100" data-dismiss="modal" @click="closeModal">Chiudi</button>
             </div>
           </div>
         </div>
       </div>
 
-      <h1>Indica il giorno del mese corrente</h1>
+      <h1>Indica il numero del mese corrente</h1>
 
       <div class="row">
           <div class="col-md-2" v-for="day in Array.from({length:31},(v,k)=>k+1)">

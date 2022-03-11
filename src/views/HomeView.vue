@@ -5,7 +5,7 @@ import TheWelcome from '@/components/TheWelcome.vue'
 <template>
   <main>
     <div class="container">
-      <router-link to="/step1" id="btn-play" class="d-flex btn btn-primary mx-auto">Play!</router-link>
+      <router-link to="/step1" id="btn-play" class="d-flex btn btn-primary mx-auto">Inizia!</router-link>
     </div>
   </main>
 </template>
